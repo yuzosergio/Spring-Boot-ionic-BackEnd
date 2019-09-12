@@ -13,6 +13,7 @@ import javax.persistence.OneToOne;
 import org.glassfish.hk2.api.InheritableThread;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yuzosergio.Cursomc.domain.enums.EstadoPagamento;
 
 @Entity
@@ -24,7 +25,7 @@ public abstract class Pagamento  implements Serializable{
 	private Integer id;
 	private Integer estado;
 	
-	@JsonBackReference
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name ="Pedido_id")
 	@MapsId
